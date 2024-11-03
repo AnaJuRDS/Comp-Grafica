@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bresenham: Retas e Triângulos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="gl-matrix-min.js" defer></script>
+    <script src="main.js" defer></script>
+    <script id="vertex-shader-2d" type="notjs">
+      // Código do Vertex Shader
+      attribute vec2 position;
+      void main() {
+          gl_Position = vec4(position, 0.0, 1.0);
+          gl_PointSize = 5.0;
+      }
+    </script>
+    <script id="fragment-shader-2d" type="notjs">
+      // Código do Fragment Shader
+      precision mediump float;
+      uniform vec3 color;
+      void main() {
+          gl_FragColor = vec4(color, 1.0);
+      }
+    </script>
+</head>
+<body>
+  <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>
